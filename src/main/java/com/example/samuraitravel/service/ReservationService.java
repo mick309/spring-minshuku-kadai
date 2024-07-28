@@ -38,7 +38,7 @@ public class ReservationService {
 		User user = userRepository.getReferenceById(userId);
 		LocalDate checkinDate = LocalDate.parse(paymentIntentObject.get("checkinDate"));
 		LocalDate checkoutDate = LocalDate.parse(paymentIntentObject.get("checkoutDate"));
-		Integer numberOfPeople = Integer.valueOf(paymentIntentObject.get("numberObPeople"));
+		Integer numberOfPeople = Integer.valueOf(paymentIntentObject.get("numberOfPeople"));
 		Integer amount = Integer.valueOf(paymentIntentObject.get("amount"));
 
 		reservation.setHouse(house);
