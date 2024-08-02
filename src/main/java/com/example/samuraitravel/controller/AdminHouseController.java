@@ -60,6 +60,12 @@ public class AdminHouseController {
 		return "admin/houses/show";
 	}
 
+	@GetMapping("/register")
+	public String register(Model model) {
+		model.addAttribute("houseRegisterForm", new HouseRegisterForm());
+		return "admin/houses/register";
+	}
+
 	@PostMapping("/create")
 	public String create(@ModelAttribute @Validated HouseRegisterForm houseRegisterForm, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
@@ -87,7 +93,7 @@ public class AdminHouseController {
 		return "admin/houses/edit";
 	}
 
-	@PostMapping("/{id}/update") // 修正箇所: "updete" -> "update"
+	@PostMapping("/{id}/update")
 	public String update(@ModelAttribute @Validated HouseEditForm houseEditForm, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 		if (bindingResult.hasErrors()) {
