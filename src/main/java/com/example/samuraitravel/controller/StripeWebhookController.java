@@ -37,7 +37,7 @@ public class StripeWebhookController {
 		try {
 			event = Webhook.constructEvent(payload, sigHeader, webhookSecret);
 		} catch (SignatureVerificationException e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error verifying signature");
 		}
 
 		if ("checkout.session.completed".equals(event.getType())) {
