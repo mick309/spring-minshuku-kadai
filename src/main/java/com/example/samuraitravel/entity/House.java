@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "houses")
+@Table(name = "house")
 @Data
 public class House {
 	@Id

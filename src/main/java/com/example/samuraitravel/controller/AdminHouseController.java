@@ -60,6 +60,12 @@ public class AdminHouseController {
 		return "admin/houses/show";
 	}
 
+	@GetMapping("/register")
+	public String register(Model model) {
+		model.addAttribute("houseRegisterForm", new HouseRegisterForm());
+		return "admin/houses/register";
+	}
+
 	@PostMapping("/create")
 	public String create(@ModelAttribute @Validated HouseRegisterForm houseRegisterForm, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
