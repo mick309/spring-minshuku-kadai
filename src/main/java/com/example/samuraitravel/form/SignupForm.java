@@ -7,11 +7,11 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class SignupForm {
-	@NotBlank(message = "氏名を入力してください。")
-	private String name;
-	
-	@NotBlank(message = "フリガナを入力してください。")
+public class SignupForm {    
+    @NotBlank(message = "氏名を入力してください。")
+    private String name;
+    
+    @NotBlank(message = "フリガナを入力してください。")
     private String furigana;
     
     @NotBlank(message = "郵便番号を入力してください。")
@@ -34,5 +34,3 @@ public class SignupForm {
     @NotBlank(message = "パスワード（確認用）を入力してください。")
     private String passwordConfirmation;    
 }
-	
-
