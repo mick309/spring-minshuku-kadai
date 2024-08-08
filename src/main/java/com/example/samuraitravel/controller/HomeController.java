@@ -11,22 +11,6 @@ import com.example.samuraitravel.repository.HouseRepository;
 
 @Controller
 public class HomeController {
-<<<<<<< HEAD
-    private final HouseRepository houseRepository;        
-    
-    public HomeController(HouseRepository houseRepository) {
-        this.houseRepository = houseRepository;            
-    }    
-    
-    @GetMapping("/")    
-    public String index(Model model) {
-        List<House> newHouses = houseRepository.findTop10ByOrderByCreatedAtDesc();
-        model.addAttribute("newHouses", newHouses);        
-        
-        return "index";
-    }   
-}
-=======
 	private final HouseRepository houseRepository;
 
 	public HomeController(HouseRepository houseRepository) {
@@ -41,4 +25,3 @@ public class HomeController {
 		return "index";
 	}
 }
->>>>>>> branch 'main' of https://github.com/mick309/spring-minshuku-kadai.git

@@ -9,30 +9,6 @@ import com.example.samuraitravel.repository.VerificationTokenRepository;
 
 @Service
 public class VerificationTokenService {
-<<<<<<< HEAD
-    private final VerificationTokenRepository verificationTokenRepository;
-    
-    
-    public VerificationTokenService(VerificationTokenRepository verificationTokenRepository) {        
-        this.verificationTokenRepository = verificationTokenRepository;
-    } 
-    
-    @Transactional
-    public void create(User user, String token) {
-        VerificationToken verificationToken = new VerificationToken();
-        
-        verificationToken.setUser(user);
-        verificationToken.setToken(token);        
-        
-        verificationTokenRepository.save(verificationToken);
-    }    
-    
-    // トークンの文字列で検索した結果を返す
-    public VerificationToken getVerificationToken(String token) {
-        return verificationTokenRepository.findByToken(token);
-    }    
-}
-=======
 	private final VerificationTokenRepository verificationTokenRepository;
 
 	public VerificationTokenService(VerificationTokenRepository verificationTokenRepository) {
@@ -54,4 +30,3 @@ public class VerificationTokenService {
 		return verificationTokenRepository.findByToken(token);
 	}
 }
->>>>>>> branch 'main' of https://github.com/mick309/spring-minshuku-kadai.git

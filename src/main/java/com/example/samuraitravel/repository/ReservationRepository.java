@@ -8,9 +8,5 @@ import com.example.samuraitravel.entity.Reservation;
 import com.example.samuraitravel.entity.User;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
-<<<<<<< HEAD
-    public Page<Reservation> findByUserOrderByCreatedAtDesc(User user, Pageable pageable);
-=======
 	public Page<Reservation> findByUserOrderByCreatedAtDesc(User user, Pageable pageable);
->>>>>>> branch 'main' of https://github.com/mick309/spring-minshuku-kadai.git
 }
