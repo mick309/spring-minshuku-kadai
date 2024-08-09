@@ -3,7 +3,9 @@
 
 <head>
 	<div th:replace="~{fragment :: meta}"></div>
+
 	<div th:replace="~{fragment :: styles}"></div>
+
 	<title>SAMURAI Travel</title>
 </head>
 
@@ -14,7 +16,6 @@
 
 		<main>
 			<div class="container pt-4 pb-5 samuraitravel-container">
-				<!-- ログインやログアウトのメッセージ表示 -->
 				<div th:if="${param.loggedIn}" class="alert alert-info">
 					ログインしました。
 				</div>
@@ -22,6 +23,11 @@
 				<div th:if="${param.loggedOut}" class="alert alert-info">
 					ログアウトしました。
 				</div>
+
+				<div th:if="${successMessage}" class="alert alert-info">
+					<span th:text="${successMessage}"></span>
+				</div>
+
 				<div class="d-flex justify-content-center">
 					<form method="get" th:action="@{/houses}" class="mb-5 samuraitravel-search-form">
 						<div class="input-group">
