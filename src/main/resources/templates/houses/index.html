@@ -246,38 +246,3 @@
 </body>
 
 </html>
- <a th:unless="${housePage.isLast()}" th:href="@{/houses(page = ${housePage.getNumber() + 1}, keyword = ${keyword}, area = ${area}, price = ${price}, order = ${order})}" class="page-link samuraitravel-page-link">次</a>
-                                        </li>
-                                    </ul>
-                                </nav> 
-                            </div>                                      
-                        </div>
-                    </div>
-                </div>  
-            </main>
-            
-            <!-- フッター -->
-            <div th:replace="~{fragment :: footer}"></div>
-        </div>    
-        
-        <div th:replace="~{fragment :: scripts}"></div>  
-  </body>
-</html>
-
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-</div>
-</main>
-
-<!-- フッター -->
-<div th:replace="~{fragment :: footer}"></div>
-</div>
-
-<div th:replace="~{fragment :: scripts}"></div>
-</body>
-
-</html>
