@@ -4,7 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import src.main.java.com.example.samuraitravel.entity.User;
+import com.example.samuraitravel.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 	public User findByEmail(String email);
