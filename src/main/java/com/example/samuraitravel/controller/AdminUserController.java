@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.samuraitravel.entity.User;
-import com.example.samuraitravel.repository.UserRepository;
+import src.main.java.com.example.samuraitravel.entity.User;
+import src.main.java.com.example.samuraitravel.repository.UserRepository;
 
 @Controller
 @RequestMapping("/admin/users")
