@@ -22,11 +22,12 @@ import com.example.samuraitravel.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	private final UserRepository userRepository;
-	private final UserService userService; 
+	private final UserService userService;
 
 	public UserController(UserRepository userRepository, UserService userService) {
 		this.userRepository = userRepository;
-		 this.userService = userService; 
+		this.userService = userService;
+
 	}
 
 	@GetMapping
@@ -48,23 +49,23 @@ public class UserController {
 
 		return "user/edit";
 	}
-	
-	 @PostMapping("/update")
-     public String update(@ModelAttribute @Validated UserEditForm userEditForm, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-         // メールアドレスが変更されており、かつ登録済みであれば、BindingResultオブジェクトにエラー内容を追加する
-         if (userService.isEmailChanged
-        		 (userEditForm) && userService.isEmailRegistered(userEditForm.getEmail())) {
-             FieldError fieldError = new FieldError(bindingResult.getObjectName(), "email", "すでに登録済みのメールアドレスです。");
-             bindingResult.addError(fieldError);                       
-         }
-         
-         if (bindingResult.hasErrors()) {
-             return "user/edit";
-         }
-         
-         userService.update(userEditForm);
-         redirectAttributes.addFlashAttribute("successMessage", "会員情報を編集しました。");
-         
-         return "redirect:/user";
-     }    
+
+	@PostMapping("/update")
+	public String update(@ModelAttribute @Validated UserEditForm userEditForm, BindingResult bindingResult,
+			RedirectAttributes redirectAttributes) {
+		// メールアドレスが変更されており、かつ登録済みであれば、BindingResultオブジェクトにエラー内容を追加する
+		if (userService.isEmailChanged(userEditForm) && userService.isEmailRegistered(userEditForm.getEmail())) {
+			FieldError fieldError = new FieldError(bindingResult.getObjectName(), "email", "すでに登録済みのメールアドレスです。");
+			bindingResult.addError(fieldError);
+		}
+
+		if (bindingResult.hasErrors()) {
+			return "user/edit";
+		}
+
+		userService.update(userEditForm);
+		redirectAttributes.addFlashAttribute("successMessage", "会員情報を編集しました。");
+
+		return "redirect:/user";
+	}
 }

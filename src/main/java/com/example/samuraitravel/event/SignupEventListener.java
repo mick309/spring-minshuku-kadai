@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender; // 修正:適切なクラスをインポート
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
 import com.example.samuraitravel.entity.User;
@@ -13,11 +13,11 @@ import com.example.samuraitravel.service.VerificationTokenService;
 @Component
 public class SignupEventListener {
 	private final VerificationTokenService verificationTokenService;
-	private final JavaMailSender javaMailSender; // 正しいクラス
+	private final JavaMailSender javaMailSender;
 
 	public SignupEventListener(VerificationTokenService verificationTokenService, JavaMailSender mailSender) {
 		this.verificationTokenService = verificationTokenService;
-		this.javaMailSender = mailSender; // コンストラクタのパラメータを適切に修正
+		this.javaMailSender = mailSender;
 	}
 
 	@EventListener
@@ -31,10 +31,10 @@ public class SignupEventListener {
 		String confirmationUrl = signupEvent.getRequestUrl() + "/verify?token=" + token;
 		String message = "以下のリンクをクリックして会員登録を完了してください。";
 
-		SimpleMailMessage mailMessage = new SimpleMailMessage(); // クラス名を修正
+		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setTo(recipientAddress);
 		mailMessage.setSubject(subject);
 		mailMessage.setText(message + "\n" + confirmationUrl);
-		javaMailSender.send(mailMessage); // メソッド呼び出しを修正
+		javaMailSender.send(mailMessage);
 	}
 }

@@ -118,10 +118,10 @@ public class ReservationController {
 
 	/*
 	@PostMapping("/houses/{id}/reservations/create")
-	public String create(@ModelAttribute ReservationRegisterForm reservationRegisterForm) {
-		reservationService.create(reservationRegisterForm);
-	
-		return "redirect:/reservations?reserved";
+	public String create(@ModelAttribute ReservationRegisterForm reservationRegisterForm) {                
+	    reservationService.create(reservationRegisterForm);        
+	    
+	    return "redirect:/reservations?reserved";
 	}
 	*/
 }

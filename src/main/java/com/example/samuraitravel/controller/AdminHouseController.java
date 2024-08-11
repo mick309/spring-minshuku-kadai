@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import src.main.java.com.example.samuraitravel.entity.House;
-import src.main.java.com.example.samuraitravel.form.HouseEditForm;
-import src.main.java.com.example.samuraitravel.form.HouseRegisterForm;
-import src.main.java.com.example.samuraitravel.repository.HouseRepository;
-import src.main.java.com.example.samuraitravel.service.HouseService;
+import com.example.samuraitravel.entity.House;
+import com.example.samuraitravel.form.HouseEditForm;
+import com.example.samuraitravel.form.HouseRegisterForm;
+import com.example.samuraitravel.repository.HouseRepository;
+import com.example.samuraitravel.service.HouseService;
+
 @Controller
 @RequestMapping("/admin/houses")
 public class AdminHouseController {
