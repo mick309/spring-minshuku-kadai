@@ -54,5 +54,4 @@ public class User {
 
 	@Column(name = "updated_at", insertable = false, updatable = false)
 	private Timestamp updatedAt;
-
 }

@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UserEditForm {
-
 	@NotNull
 	private Integer id;
 
@@ -29,5 +28,4 @@ public class UserEditForm {
 
 	@NotBlank(message = "メールアドレスを入力してください。")
 	private String email;
-
 }
